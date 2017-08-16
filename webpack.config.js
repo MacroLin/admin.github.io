@@ -18,6 +18,7 @@ var postcssOpts = {
 		]
 	}
 }
+var publicPath = '/dist'
 var config = {
 	entry:{
 
@@ -25,7 +26,7 @@ var config = {
 	output:{
 		path:path.join(__dirname,'dist'),
 		filename:'js/[name].js',
-		publicPath:'/dist'
+		publicPath:publicPath
 	},
 	module:{
 		rules:[{
