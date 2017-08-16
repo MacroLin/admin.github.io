@@ -25,7 +25,7 @@ var config = {
 	output:{
 		path:path.join(__dirname,'dist'),
 		filename:'js/[name].js',
-		publicPath:'/dist/'
+		publicPath:'/dist'
 	},
 	module:{
 		rules:[{
@@ -62,12 +62,30 @@ var config = {
 				]
 			})
 		},{
-			test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|mp3|mp4)(\?.*)?$/,
+			test: /\.(ttf|woff|woff2|eot|otf)(\?.*)?$/,
             use: [{
             	loader:"url-loader",
             	options: {
 	              limit: 8192,
-	              name:'/assets/[hash].[ext]'
+	              name:'/assets/fonts/[hash].[ext]'
+	            }
+            }],
+		},{
+			test: /\.(mp3|mp4)(\?.*)?$/,
+            use: [{
+            	loader:"url-loader",
+            	options: {
+	              limit: 8192,
+	              name:'/assets/videos/[hash].[ext]'
+	            }
+            }],
+		},{
+			test: /\.(ico|jpg|jpeg|png|gif|webp)(\?.*)?$/,
+            use: [{
+            	loader:"url-loader",
+            	options: {
+	              limit: 8192,
+	              name:'/assets/imgs/[hash].[ext]'
 	            }
             }],
 		},{
@@ -75,12 +93,12 @@ var config = {
 			use:[{
 				loader:'svg-sprite-loader',
 	            options:{
-	            	spriteFilename:'/assets/[hash].svg'
+	            	spriteFilename:'/assets/svgs/[hash].svg'
 	            }
 			},{
 				loader:'svgo-loader',
 				options:{
-	            	spriteFilename:'/assets/[hash].svg'
+	            	spriteFilename:'/assets/svgs/[hash].svg'
 	            }
 			}]
 		}]
