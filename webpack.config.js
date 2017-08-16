@@ -2,7 +2,7 @@ var webpack = require('webpack')
 var path = require('path')
 var glob = require('glob')
 var extractTextPlugin = require('extract-text-webpack-plugin')
-
+var SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 var autoprefixer = require('autoprefixer')
 var pxtorem = require('postcss-pxtorem')
 var postcssOpts = {
@@ -33,7 +33,7 @@ var config = {
 			use:[{
 				loader:'babel-loader',
 				query:{
-					presets:['stage-0','es2015'],
+					presets:['stage-0','es2015','env'],
 				},
 
 			}],
@@ -69,7 +69,20 @@ var config = {
 	              limit: 8192,
 	              name:'/assets/[hash].[ext]'
 	            }
-            }]
+            }],
+		},{
+			test:/\.svg$/i,
+			use:[{
+				loader:'svg-sprite-loader',
+	            options:{
+	            	spriteFilename:'/assets/[hash].svg'
+	            }
+			},{
+				loader:'svgo-loader',
+				options:{
+	            	spriteFilename:'/assets/[hash].svg'
+	            }
+			}]
 		}]
 	},
 	devServer: {
@@ -87,7 +100,15 @@ var config = {
 		new extractTextPlugin({
 			filename:'/css/[name].css',
 			allChunks:true
-		})
+		}),
+		new SpriteLoaderPlugin(),
+		new webpack.ProvidePlugin({
+	      jQuery: 'jquery',
+	      jquery: 'jquery',
+	      $: 'jquery',
+	      "window.jQuery":'jquery',
+	      Tether: 'tether'
+  		})
 	]
 }
 var files = glob.sync('./src/js/**/*.js')
