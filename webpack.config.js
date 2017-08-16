@@ -13,7 +13,7 @@ var postcssOpts = {
 			browsers: ["last 2 versions", "Firefox ESR", "> 1%", "ie >= 8", "iOS >= 8", "Android >= 4"],
 			}),
 			pxtorem({
-				rootValue:16,
+				rootValue:13,
 			})
 		]
 	}
@@ -25,7 +25,7 @@ var config = {
 	output:{
 		path:path.join(__dirname,'dist'),
 		filename:'js/[name].js',
-		publicPath:'./dist'
+		publicPath:'/dist'
 	},
 	module:{
 		rules:[{
@@ -67,7 +67,7 @@ var config = {
             	loader:"url-loader",
             	options: {
 	              limit: 8192,
-	              name:'/assets/fonts/[hash].[ext]'
+	              name:'/assets/fonts/[hash].[ext]',
 	            }
             }],
 		},{
@@ -76,7 +76,7 @@ var config = {
             	loader:"url-loader",
             	options: {
 	              limit: 8192,
-	              name:'/assets/videos/[hash].[ext]'
+	              name:'/assets/videos/[hash].[ext]',
 	            }
             }],
 		},{
@@ -85,7 +85,7 @@ var config = {
             	loader:"url-loader",
             	options: {
 	              limit: 8192,
-	              name:'/assets/imgs/[hash].[ext]'
+	              name:'/assets/imgs/[hash].[ext]',
 	            }
             }],
 		},{
