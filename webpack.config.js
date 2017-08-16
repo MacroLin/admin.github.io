@@ -25,7 +25,7 @@ var config = {
 	output:{
 		path:path.join(__dirname,'dist'),
 		filename:'js/[name].js',
-		publicPath:process.env.ASSET_PATH || '/dist'
+		publicPath:'./dist'
 	},
 	module:{
 		rules:[{
