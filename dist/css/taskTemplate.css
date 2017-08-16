@@ -1,0 +1,117 @@
+html body {
+  position: relative;
+}
+html body .wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+html body .wrapper .box {
+  border-top: 0;
+}
+html body .wrapper .content-wrapper .nav-tabs li a {
+  background: rgba(33, 33, 22, 0.1);
+  position: relative;
+  padding: 5px 30px 0 20px;
+}
+html body .wrapper .content-wrapper .nav-tabs li a i {
+  position: absolute;
+  right: 8px;
+  top: 7px;
+  cursor: pointer;
+}
+html body .wrapper .content-wrapper .nav-tabs li.active a {
+  background: #ecf0f5;
+}
+html body .wrapper .content-wrapper .nav-tabs li:first-of-type {
+  text-align: center;
+}
+html body .wrapper .content-wrapper .nav-tabs li:first-of-type a {
+  padding: 5px 30px 0 20px;
+}
+html body .wrapper .content-wrapper .tab-content {
+  padding: 20px 0;
+}
+html body .wrapper .content-wrapper .tab-content iframe {
+  width: 100%;
+  border: 0;
+}
+html body .wrapper .modal {
+  overflow: hidden;
+}
+html body .wrapper .modal .modal-dialog {
+  position: relative;
+  height: 100%;
+  width: 60%;
+  margin: auto;
+  overflow: hidden;
+  padding-top: 55px;
+  padding-bottom: 60px;
+  margin-top: 3%;
+}
+html body .wrapper .modal .modal-dialog .modal-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: white;
+  z-index: 666;
+}
+html body .wrapper .modal .modal-dialog .modal-content {
+  height: 100%;
+  overflow: auto;
+  padding-top: 30px;
+}
+html body .wrapper .form-submit {
+  width: 60%;
+  margin: auto;
+}
+html .pg-canvas {
+  position: fixed;
+  top: 0;
+}
+html #background_video {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, -25%);
+      -ms-transform: translate(-50%, -25%);
+          transform: translate(-50%, -25%);
+}
+html #video_cover {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  background: url(/dist//assets/c32e69c8c0ec56e81ba8f2fa190b5671.jpeg) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+html #video_controls {
+  position: fixed;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+html #play img {
+  width: 100px;
+}
+html #pause img {
+  width: 90px;
+}
+html #pause {
+  display: none;
+}
+@media (min-width: 768px) {
+  html #video_controls {
+    display: none;
+  }
+}
+body .wrapper .btn-file {
+  display: block;
+  margin-top: 2%;
+}
+body .wrapper .form-submit {
+  margin: auto;
+  width: 60%;
+  padding-bottom: 20px;
+}

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Admin</title>
+		<!-- Tell the browser to be responsive to screen width -->
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<!-- Bootstrap 3.3.7 -->
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+		<!-- Ionicons -->
+		<link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
+		<!-- Theme style -->
+		<link rel="stylesheet" href="adminlte/css/AdminLTE.css">
+		<!-- 		AdminLTE Skins. Choose a skin from the css/skins
+		folder instead of downloading all of them to reduce the load. -->
+		<link rel="stylesheet" href="adminlte/css/skins/_all-skins.min.css">
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<!-- Google Font -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+		<!-- Your style -->
+		<link rel="stylesheet" href="dist/css/index.css">
+		
+	</head>
+	<body class="hold-transition fixed skin-blue sidebar-mini ">
+		<div class="wrapper">
+		
+		<header class="main-header">
+			<a href="/" class="logo">
+				<!-- mini logo for sidebar mini 50x50 pixels -->
+				<span class="logo-mini"><b>A</b></span>
+				<!-- logo for regular state and mobile devices -->
+				<span class="logo-lg"><b>Admin</b></span>
+			</a>
+			<!-- Header Navbar: style can be found in header.less -->
+			<nav class="navbar navbar-static-top" role="navigation">
+				<!-- Sidebar toggle button-->
+				<a href="javascript:;" class="sidebar-toggle" data-toggle="push-menu" role="button">
+					<span class="sr-only">Toggle navigation</span>
+				</a>
+				<!-- Navbar Right Menu -->
+				<div class="navbar-custom-menu">
+					<ul class="nav navbar-nav">
+						<!-- User Account: style can be found in dropdown.less -->
+						<li class="dropdown user user-menu">
+							<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+								<img src="adminlte/img/user2-160x160.jpg" class="user-image" alt="User Image">
+								<span class="hidden-xs">Alexander Pierce</span>
+							</a>
+							<ul class="dropdown-menu">
+								<!-- User image -->
+								<li class="user-header">
+									<img src="adminlte/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+									<p>
+										Alexander Pierce - Web Developer
+										<small>Member since Nov. 2012</small>
+									</p>
+								</li>
+								<!-- Menu Body -->
+								<li class="user-body">
+									<div class="col-xs-4 text-center">
+										<a href="javascript:;">Followers</a>
+									</div>
+									<div class="col-xs-4 text-center">
+										<a href="javascript:;">Sales</a>
+									</div>
+									<div class="col-xs-4 text-center">
+										<a href="javascript:;">Friends</a>
+									</div>
+								</li>
+								<!-- Menu Footer-->
+								<li class="user-footer">
+									<div class="pull-left">
+										<a href="javascript:;" class="btn btn-default btn-flat">Profile</a>
+									</div>
+									<div class="pull-right">
+										<a href="javascript:;" class="btn btn-default btn-flat">Sign out</a>
+									</div>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+		<aside class="main-sidebar">
+			<!-- sidebar: style can be found in sidebar.less -->
+			<section class="sidebar">
+				<!-- Sidebar user panel -->
+				<div class="user-panel">
+					<div class="pull-left image">
+						<img src="adminlte/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+					</div>
+					<div class="pull-left info">
+						<p>Alexander Pierce</p>
+						<a href="javascript:;"><i class="fa fa-circle text-success"></i> Online</a>
+					</div>
+				</div>
+				<!-- search form -->
+				<form action="##" method="get" class="sidebar-form">
+					<div class="input-group">
+						<input type="text" name="q" class="form-control" placeholder="Search...">
+						<span class="input-group-btn">
+							<button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+							</button>
+						</span>
+					</div>
+				</form>
+				<!-- /.search form -->
+				<!-- sidebar menu: : style can be found in sidebar.less -->
+				<ul class="sidebar-menu" data-widget="tree">
+					<li class="header">MAIN NAVIGATION</li>
+					<li class="treeview">
+						<a href="javascript:;">
+							<i class="fa fa-desktop"></i> <span>机房管理</span>
+							<span class="pull-right-container">
+								<i class="fa fa-angle-left pull-right"></i>
+							</span>
+						</a>
+						<ul class="treeview-menu">
+							<li><a data-url="/pages/deviceAdm.html" data-index=1 href="javascript:;"><i class="fa fa-television"></i>设备管理</a></li>
+							<li><a data-url="" data-index=2 href="javascript:;"><i class="fa fa-heartbeat"></i>是否在线</a></li>
+							<li><a data-url="" data-index=3 href="javascript:;"><i class="fa fa-cloud"></i>云控操作</a></li>
+						</ul>
+					</li>
+					<li class="treeview">
+						<a href="javascript:;">
+							<i class="fa fa-vimeo"></i> <span>VPN</span>
+							<span class="pull-right-container">
+								<i class="fa fa-angle-left pull-right"></i>
+							</span>
+						</a>
+						<ul class="treeview-menu">
+							<li class="active"><a data-url="" data-index=4 href="javascript:;"><i class="fa fa-level-up"></i>VPN上游管理</a></li>
+							<li><a data-url="/pages/userAdm.html" data-index=5 href="javascript:;"><i class="fa fa-user"></i>账号管理</a></li>
+							<li><a data-url="" data-index=6 href="javascript:;"><i class="fa fa-random"></i>分配管理</a></li>
+						</ul>
+					</li>
+					<li class="treeview">
+						<a href="javascript:;">
+							<i class="fa fa-credit-card"></i> <span>SIM卡</span>
+							<span class="pull-right-container">
+								<i class="fa fa-angle-left pull-right"></i>
+							</span>
+						</a>
+						<ul class="treeview-menu">
+							<li class="active"><a data-url="/pages/simList.html" data-index=7 href="javascript:;"><i class="fa fa-list-alt"></i>列表</a></li>
+							<li><a data-url="" data-index=8 href="javascript:;"><i class="fa fa-random"></i>分配</a></li>
+							<li><a data-url="" data-index=9 href="javascript:;"><i class="fa fa-object-ungroup"></i>批量分配</a></li>
+						</ul>
+					</li>
+					<li class="treeview">
+						<a href="javascript:;">
+							<i class="fa fa-book"></i> <span>任务模板</span>
+							<span class="pull-right-container">
+								<i class="fa fa-angle-left pull-right"></i>
+							</span>
+						</a>
+						<ul class="treeview-menu">
+							<li class="active"><a  data-url="/pages/taskTemplate.html" data-index=10  href="javascript:;"><i class="fa fa-edit"></i>模板列表</a></li>
+						</ul>
+					</li>
+					<li class="treeview">
+						<a href="javascript:;">
+							<i class="fa fa-tasks"></i> <span>任务计划</span>
+							<span class="pull-right-container">
+								<i class="fa fa-angle-left pull-right"></i>
+							</span>
+						</a>
+						<ul class="treeview-menu">
+							<li class="active"><a  data-url="" data-index=11 href="javascript:;"><i class="fa fa fa-edit"></i>任务</a></li>
+							<li><a  data-url="" data-index=12  href="javascript:;"><i class="fa fa-area-chart"></i>统计结果</a></li>
+						</ul>
+					</li>
+					<li class="treeview">
+						<a href="javascript:;">
+							<i class="fa fa-cloud"></i> <span>云控</span>
+							<span class="pull-right-container">
+								<i class="fa fa-angle-left pull-right"></i>
+							</span>
+						</a>
+						<ul class="treeview-menu">
+							<li class="active"><a  data-url="" data-index=13 href="javascript:;"><i class="fa fa-file-code-o"></i>命令脚本管理</a></li>
+						</ul>
+					</li>
+					<li class="treeview">
+						<a href="javascript:;">
+							<i class="fa fa-align-center"></i> <span>任务分布</span>
+							<span class="pull-right-container">
+								<i class="fa fa-angle-left pull-right"></i>
+							</span>
+						</a>
+						<ul class="treeview-menu">
+							<li class="active"><a  data-url="" data-index=14 href="javascript:;"><i class="fa fa-user-secret"></i>代理商</a></li>
+						</ul>
+					</li>
+					<li class="treeview permissions">
+						<a data-url="/pages/permAdm.html" data-index=15 href="javascript:;">
+							<i class="fa fa-wrench"></i>
+							<span>用户权限</span>
+						</a>
+					</li>
+				</ul>
+			</section>
+			<!-- /.sidebar -->
+		</aside>
+		<div class="content-wrapper nav-tabs">
+			<!-- Custom Tabs -->
+			<ul class="nav nav-tabs menu">
+				<li class="active"><a href="#tab_1"  data-toggle="tab">主页</a></li>
+			</ul>
+			<div class="tab-content">
+				<div class="tab-pane active" id="tab_1">
+					<iframe class="iframe" src="/pages/main.html" frameborder="0"></iframe>
+				</div>
+				<!-- /.tab-content -->
+			</div>
+		</div>
+	<footer class="main-footer"></footer>
+	<div class="control-sidebar-bg"></div>
+</div>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+$.widget.bridge('uibutton', $.ui.button);
+</script>
+<!-- Bootstrap 3.3.7 -->
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Bootstrap WYSIHTML5 -->
+<script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+<!-- Slimscroll -->
+<script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+
+<!-- FastClick -->
+<script src="bower_components/fastclick/lib/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="adminlte/js/adminlte.js"></script>
+<!-- Your Js -->
+<script src="dist/js/index.js"></script>
+</body>
+</html>
