@@ -24,232 +24,240 @@
 		<div id="overlay"></div>
 		<section class="content">
 			<div class="box">
-			<div class="box-header">
-				<a href="##" data-toggle="modal" data-target="#addModal" class="btn btn-app">
-					<i class="fa fa-plus"></i>
-					新建
-				</a>
-				<a href="##"  class="btn btn-app">
-					<i class="fa fa-trash-o"></i>
-					删除
-				</a>
-				<a href="#" class="btn btn-app">
-					<i class="fa fa-wrench"></i>
-					检查所有
-				</a>
-			</div>
-			<!-- /.box-header -->
-			<div class="box-body">
-				
-				<div class="table-responsive mailbox-messages">
-					<table id="table" class="table table-hover table-striped">
-						<thead>
-							<tr>
-								<th>
-									<!-- Check all button -->
-									<button type="button" class="btn btn-default btn-sm checkbox-toggle"><i class="fa fa-square-o"></i>
-									</button>
-								</th>
-								<th>host</th>
-								<th>账号</th>
-								<th>密码</th>
-								<th>状态</th>
-								<th>备注</th>
-								<th>到期时间</th>
-								<th>地区</th>
-								<th>操作</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td><input type="checkbox"></td>
-								<td>nnb.8866.org</td>
-								<td>uyiab128087</td>
-								<td>baiyu123456</td>
-								<td>
-									<span class="label bg-olive label-sm">正常</span>
-								</td>
-								<td>
-									hello world
-								</td>
-								<td>
-									2018-12-12 12:12:12
-								</td>
-								<td>US</td>
-								<td>
-									<a href="#" data-toggle="modal" data-target="#editModal" class="btn btn-primary btn-sm">
-										<i class="fa fa-edit"></i>
-										修改
-									</a>
-									<a href="#" data-toggle="modal" class="btn btn-danger btn-sm">
-										<i class="fa fa-trash-o"></i>
-										删除
-									</a>
-								</td>
-							</tr>
-						</tbody>
-					</table>
+				<div class="box-header">
+					<a href="##" data-toggle="modal" data-target="#addModal" class="btn btn-app">
+						<i class="fa fa-plus"></i>
+						新建
+					</a>
+					<a href="##"  class="btn btn-app">
+						<i class="fa fa-trash-o"></i>
+						删除
+					</a>
+					<a href="#" class="btn btn-app">
+						<i class="fa fa-wrench"></i>
+						检查所有
+					</a>
 				</div>
-			</div>
-			<!--modal-->
-			<div class="modal fade" id="addModal" data-target="#modal-info" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-				<div class="modal-dialog" role="document">
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-							<h4 class="modal-title" id="myModalLabel">新建</h4>
-						</div>
-						<div class="modal-body">
-							<form action="">
-								<div class="form-group">
-									<label>Host:</label>
-									<div class="input-group">
-										<div class="input-group-addon">
-											<i class="fa fa-laptop"></i>
+				<!-- /.box-header -->
+				<div class="box-body">
+					
+					<div class="table-responsive mailbox-messages">
+						<table id="table" class="table table-hover table-striped">
+							<thead>
+								<tr>
+									<th>
+										<!-- Check all button -->
+										<button type="button" class="btn btn-default btn-sm checkbox-toggle"><i class="fa fa-square-o"></i>
+										</button>
+									</th>
+									<th>host</th>
+									<th>账号</th>
+									<th>密码</th>
+									<th>状态</th>
+									<th>备注</th>
+									<th>到期时间</th>
+									<th>地区</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><input type="checkbox"></td>
+									<td>nnb.8866.org</td>
+									<td>uyiab128087</td>
+									<td>baiyu123456</td>
+									<td>
+										<span class="label bg-olive label-sm">正常</span>
+									</td>
+									<td>
+										hello world
+									</td>
+									<td>
+										2018-12-12 12:12:12
+									</td>
+									<td>US</td>
+									<td>
+										<a href="#" data-toggle="modal" data-target="#editModal" class="btn btn-primary btn-sm">
+											<i class="fa fa-edit"></i>
+											修改
+										</a>
+										<a href="#" data-toggle="modal" class="btn btn-danger btn-sm">
+											<i class="fa fa-trash-o"></i>
+											删除
+										</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<!--modal-->
+				<div class="modal fade" id="addModal" data-target="#modal-info" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								<h4 class="modal-title" id="myModalLabel">新建</h4>
+							</div>
+							<div class="modal-body">
+								<form action="">
+									<div class="form-group">
+										<label>Host:</label>
+										<div class="input-group">
+											<div class="input-group-addon">
+												<i class="fa fa-laptop"></i>
+											</div>
+											<input type="text" class="form-control" data-mask name="host">
 										</div>
-										<input type="text" class="form-control" data-mask>
+										<!-- /.input group -->
 									</div>
-									<!-- /.input group -->
-								</div>
-								<div class="form-group">
-									<label>账号:</label>
-									<div class="input-group">
-										<div class="input-group-addon">
-											<i class="fa fa-user"></i>
+									<div class="form-group">
+										<label>账号:</label>
+										<div class="input-group">
+											<div class="input-group-addon">
+												<i class="fa fa-user"></i>
+											</div>
+											<input type="text" class="form-control" name="username"  data-mask>
 										</div>
-										<input type="text" class="form-control" name="username"  data-mask>
+										<!-- /.input group -->
 									</div>
-									<!-- /.input group -->
-								</div>
-								<div class="form-group">
-									<label>密码:</label>
-									<div class="input-group">
-										<div class="input-group-addon">
-											<i class="fa fa-lock"></i>
+									<div class="form-group">
+										<label>密码:</label>
+										<div class="input-group">
+											<div class="input-group-addon">
+												<i class="fa fa-lock"></i>
+											</div>
+											<input type="text" class="form-control" name="password"  data-mask>
 										</div>
-										<input type="text" class="form-control" name="nickname"  data-mask>
+										<!-- /.input group -->
 									</div>
-									<!-- /.input group -->
-								</div>
-								<div class="form-group">
-									<label>备注:</label>
-									<div class="input-group">
-										<div class="input-group-addon">
-											<i class="fa "></i>
+									<div class="form-group">
+										<label>备注:</label>
+										<div class="input-group">
+											<div class="input-group-addon">
+												<i class="fa "></i>
+											</div>
+											<input type="text" class="form-control" data-mask name="comment">
 										</div>
-										<input type="text" class="form-control" data-mask>
+										<!-- /.input group -->
 									</div>
-									<!-- /.input group -->
-								</div>
-								<div class="form-group"></div>
-								<div class="form-group">
-									<label>地区:</label>
-									<select class="form-control" name="area" id="">
-										<option value="">US</option>
-										<option value="">CN</option>
-									</select>
-								</div>
-								<div class="form-group">
-									<input type="submit" class="form-submit form-control btn btn-success btn-block btn-justified" value="提交">
-									<!-- /.input group -->
-								</div>
-							</form>
+									<div class="form-group"></div>
+									<div class="form-group">
+										<label>地区:</label>
+										<select class="form-control" name="area" id="">
+											<option value="">US</option>
+											<option value="">CN</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<input type="submit" class="form-submit form-control btn btn-success btn-block btn-justified" value="提交">
+										<!-- /.input group -->
+									</div>
+								</form>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="modal fade" id="editModal" data-target="#modal-info" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-				<div class="modal-dialog" role="document">
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-							<h4 class="modal-title" id="myModalLabel">修改</h4>
-						</div>
-						<div class="modal-body">
-							<form action="">
-								<div class="form-group">
-									<label>Host:</label>
-									<div class="input-group">
-										<div class="input-group-addon">
-											<i class="fa fa-laptop"></i>
+				<div class="modal fade" id="editModal" data-target="#modal-info" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								<h4 class="modal-title" id="myModalLabel">修改</h4>
+							</div>
+							<div class="modal-body">
+								<form action="">
+									<div class="form-group">
+										<label>Host:</label>
+										<div class="input-group">
+											<div class="input-group-addon">
+												<i class="fa fa-laptop"></i>
+											</div>
+											<input type="text" class="form-control" data-mask name="host">
 										</div>
-										<input type="text" class="form-control" data-mask>
+										<!-- /.input group -->
 									</div>
-									<!-- /.input group -->
-								</div>
-								<div class="form-group">
-									<label>账号:</label>
-									<div class="input-group">
-										<div class="input-group-addon">
-											<i class="fa fa-user"></i>
+									<div class="form-group">
+										<label>账号:</label>
+										<div class="input-group">
+											<div class="input-group-addon">
+												<i class="fa fa-user"></i>
+											</div>
+											<input type="text" class="form-control" name="username"  data-mask>
 										</div>
-										<input type="text" class="form-control" name="username"  data-mask>
+										<!-- /.input group -->
 									</div>
-									<!-- /.input group -->
-								</div>
-								<div class="form-group">
-									<label>密码:</label>
-									<div class="input-group">
-										<div class="input-group-addon">
-											<i class="fa fa-lock"></i>
+									<div class="form-group">
+										<label>密码:</label>
+										<div class="input-group">
+											<div class="input-group-addon">
+												<i class="fa fa-lock"></i>
+											</div>
+											<input type="text" class="form-control" name="password"  data-mask>
 										</div>
-										<input type="text" class="form-control" name="nickname"  data-mask>
+										<!-- /.input group -->
 									</div>
-									<!-- /.input group -->
-								</div>
-								<div class="form-group">
-									<label>备注:</label>
-									<div class="input-group">
-										<div class="input-group-addon">
-											<i class="fa "></i>
+									<div class="form-group">
+										<label>备注:</label>
+										<div class="input-group">
+											<div class="input-group-addon">
+												<i class="fa "></i>
+											</div>
+											<input type="text" class="form-control" data-mask name="comment">
 										</div>
-										<input type="text" class="form-control" data-mask>
+										<!-- /.input group -->
 									</div>
-									<!-- /.input group -->
-								</div>
-								<div class="form-group"></div>
-								<div class="form-group">
-									<label>地区:</label>
-									<select class="form-control" name="area" id="">
-										<option value="">US</option>
-										<option value="">CN</option>
-									</select>
-								</div>
-								<div class="form-group">
-									<input type="submit" class="form-submit form-control btn btn-success btn-block btn-justified" value="提交">
-									<!-- /.input group -->
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="modal fade" id="allModal" data-target="#modal-info" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-				<div class="modal-dialog" role="document">
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-							<h4 class="modal-title" id="myModalLabel">是否禁用</h4>
-						</div>
-						<div class="modal-body">
-							<form action="">
-								<div class="form-group">
-									<label>修改</label>
-									<div class="switch" data-on="success" data-off="warning">
-										<input class="isDisabled" type="checkbox" checked />
+									<div class="form-group">
+										<label>地区:</label>
+										<select class="form-control" name="area" id="">
+											<option value="">US</option>
+											<option value="">CN</option>
+										</select>
 									</div>
-								</div>
-								<div class="form-group">
-									<input type="submit" class="form-control btn btn-success btn-block btn-justified" value="保存">
-									<!-- /.input group -->
-								</div>
-							</form>
+									<div class="form-group col-xs-4">
+										<label>到期时间:</label>
+										<div class="input-group date datepicker">
+											<input type="text" class="form-control">
+											<div class="input-group-addon">
+												<span class="glyphicon glyphicon-th"></span>
+											</div>
+										</div>
+									</div>
+									<div class="form-group col-xs-12">
+										<input type="submit" class="form-submit form-control btn btn-success btn-block btn-justified" value="提交">
+										<!-- /.input group -->
+									</div>
+								</form>
+							</div>
 						</div>
 					</div>
 				</div>
+				<div class="modal fade" id="allModal" data-target="#modal-info" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								<h4 class="modal-title" id="myModalLabel">是否禁用</h4>
+							</div>
+							<div class="modal-body">
+								<form action="">
+									<div class="form-group">
+										<label>修改</label>
+										<div class="switch" data-on="success" data-off="warning">
+											<input class="isDisabled" type="checkbox" checked />
+										</div>
+									</div>
+									<div class="form-group">
+										<input type="submit" class="form-control btn btn-success btn-block btn-justified" value="保存">
+										<!-- /.input group -->
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /.box-body -->
 			</div>
-			<!-- /.box-body -->
-		</div>
 		</section>
 	</div>
 </body>

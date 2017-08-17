@@ -10,6 +10,7 @@ import 'select2'
 import 'bootstrap-add-clear'
 import 'bootstrap-datepicker'
 import 'bootstrap-daterangepicker'
+import 'eonasdan-bootstrap-datetimepicker'
 import 'bootstrap-colorpicker'
 import 'bootstrap-timepicker'
 import 'jquery-slimscroll'
@@ -93,9 +94,10 @@ class Public {
 					
 				},
 				datepickerInit:()=>{
-					$('.datepicker').datepicker({
+					$('.datepicker').datetimepicker({
 						autoclose: true
 					})
+
 				},
 				inputInit:()=>{
 					$("input[type=text]").addClear({
