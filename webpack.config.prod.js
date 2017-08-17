@@ -18,7 +18,7 @@ var postcssOpts = {
 		]
 	}
 }
-var publicPath = 'https://macrolin.github.io/admin.github.io/dist'
+var publicPath = '/dist'
 var config = {
 	entry: {
 
