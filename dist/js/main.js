@@ -60,7 +60,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "594a95867c8a3a032528"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "0ac6a6c59eb3180ed65f"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -720,7 +720,7 @@
 /******/ 	__webpack_require__.h = function() { return hotCurrentHash; };
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return hotCreateRequire(176)(__webpack_require__.s = 176);
+/******/ 	return hotCreateRequire(177)(__webpack_require__.s = 177);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -28454,6 +28454,8 @@ __webpack_require__(170);
 
 __webpack_require__(171);
 
+__webpack_require__(172);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -28522,9 +28524,7 @@ var Public = function () {
 						});
 					},
 					datepickerInit: function datepickerInit() {
-						$('.datepicker').datetimepicker({
-							autoclose: true
-						});
+						$('.datepicker').datetimepicker();
 					},
 					inputInit: function inputInit() {
 						$("input[type=text]").addClear({
@@ -86169,6 +86169,12 @@ if (typeof jQuery === 'undefined') {
 
 /***/ }),
 /* 172 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 173 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -86365,7 +86371,7 @@ if (typeof jQuery === 'undefined') {
 })(window);
 
 /***/ }),
-/* 173 */
+/* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -86409,9 +86415,9 @@ if (typeof jQuery === 'undefined') {
 })();
 
 /***/ }),
-/* 174 */,
 /* 175 */,
-/* 176 */
+/* 176 */,
+/* 177 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -86421,11 +86427,11 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _index = __webpack_require__(122);
 
-__webpack_require__(172);
-
 __webpack_require__(173);
 
-__webpack_require__(177);
+__webpack_require__(174);
+
+__webpack_require__(178);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -86531,7 +86537,7 @@ main.init();
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 177 */
+/* 178 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

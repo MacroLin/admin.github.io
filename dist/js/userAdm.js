@@ -60,7 +60,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "594a95867c8a3a032528"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "0ac6a6c59eb3180ed65f"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -720,7 +720,7 @@
 /******/ 	__webpack_require__.h = function() { return hotCurrentHash; };
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return hotCreateRequire(182)(__webpack_require__.s = 182);
+/******/ 	return hotCreateRequire(183)(__webpack_require__.s = 183);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -28454,6 +28454,8 @@ __webpack_require__(170);
 
 __webpack_require__(171);
 
+__webpack_require__(172);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -28522,9 +28524,7 @@ var Public = function () {
 						});
 					},
 					datepickerInit: function datepickerInit() {
-						$('.datepicker').datetimepicker({
-							autoclose: true
-						});
+						$('.datepicker').datetimepicker();
 					},
 					inputInit: function inputInit() {
 						$("input[type=text]").addClear({
@@ -86169,6 +86169,12 @@ if (typeof jQuery === 'undefined') {
 
 /***/ }),
 /* 172 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 173 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -86365,7 +86371,7 @@ if (typeof jQuery === 'undefined') {
 })(window);
 
 /***/ }),
-/* 173 */
+/* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -86409,7 +86415,6 @@ if (typeof jQuery === 'undefined') {
 })();
 
 /***/ }),
-/* 174 */,
 /* 175 */,
 /* 176 */,
 /* 177 */,
@@ -86417,7 +86422,8 @@ if (typeof jQuery === 'undefined') {
 /* 179 */,
 /* 180 */,
 /* 181 */,
-/* 182 */
+/* 182 */,
+/* 183 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -86427,16 +86433,16 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _index = __webpack_require__(122);
 
-__webpack_require__(172);
-
 __webpack_require__(173);
 
-__webpack_require__(183);
+__webpack_require__(174);
+
+__webpack_require__(184);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var pub = new _index.Public();
-pub.formInit()('inputInit', 'switchInit', 'icheckInit');
+pub.formInit()('inputInit', 'switchInit', 'icheckInit', 'datepickerInit');
 
 var UserAdm = function () {
 	function UserAdm() {
@@ -86456,33 +86462,7 @@ var UserAdm = function () {
 					timePickerIncrement: 30,
 					format: 'MM/DD/YYYY h:mm A'
 				});
-				$('#daterange-btn').daterangepicker({
-					ranges: {
-						'Today': [(0, _index.moment)(), (0, _index.moment)()],
-						'Yesterday': [(0, _index.moment)().subtract(1, 'days'), (0, _index.moment)().subtract(1, 'days')],
-						'Last 7 Days': [(0, _index.moment)().subtract(6, 'days'), (0, _index.moment)()],
-						'Last 30 Days': [(0, _index.moment)().subtract(29, 'days'), (0, _index.moment)()],
-						'This Month': [(0, _index.moment)().startOf('month'), (0, _index.moment)().endOf('month')],
-						'Last Month': [(0, _index.moment)().subtract(1, 'month').startOf('month'), (0, _index.moment)().subtract(1, 'month').endOf('month')]
-					},
-					startDate: (0, _index.moment)().subtract(29, 'days'),
-					endDate: (0, _index.moment)()
-				}, function (start, end) {
-					$('#daterange-btn span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-				});
 
-				$('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
-					checkboxClass: 'icheckbox_minimal-blue',
-					radioClass: 'iradio_minimal-blue'
-				});
-				$('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
-					checkboxClass: 'icheckbox_minimal-red',
-					radioClass: 'iradio_minimal-red'
-				});
-				$('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
-					checkboxClass: 'icheckbox_flat-green',
-					radioClass: 'iradio_flat-green'
-				});
 				$('.my-colorpicker1').colorpicker();
 				$('.my-colorpicker2').colorpicker();
 				$('.timepicker').timepicker({
@@ -86514,7 +86494,7 @@ userAdm.init();
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 183 */
+/* 184 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
