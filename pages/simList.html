@@ -64,7 +64,7 @@
 									<td>8/12/2017</td>
 									<td>hello world</td>
 									<td>
-										<a href="##" class="btn btn-info btn-sm">
+										<a href="javascript:;" data-toggle="modal" data-target="#allotModal" class="btn btn-info btn-sm">
 											分配
 										</a>
 									</td>
@@ -77,6 +77,32 @@
 					</div>
 				</div>
 			</div>
+			<div class="modal fade" id="allotModal" data-target="#modal-info" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								<h4 class="modal-title" id="myModalLabel">分配</h4>
+							</div>
+							<div class="modal-body">
+								<form action="">
+									<div class="form-group">
+										<select class="select2" style="width:50%" name="selectedAllot"  id="">
+											<option value="">机房1</option>
+											<option value="">机房2</option>
+											<option value="">机房3</option>
+											<option value="">机房4</option>
+										</select>
+									</div>
+									<div class="form-group col-xs-12">
+										<input type="submit" class="form-submit form-control btn btn-success btn-block btn-justified" value="提交">
+										<!-- /.input group -->
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
 		</section>
 	</body>
 	<script src="../dist/js/simList.js"></script>

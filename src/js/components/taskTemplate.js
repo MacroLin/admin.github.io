@@ -6,7 +6,7 @@ import '../../style/taskTemplate.less'
 
 const pub = new Public()
 
-pub.formInit('inputInit','switchInit','datepickerInit','fileUploadInit','icheckInit')
+pub.formInit('inputInit','switchInit','datepickerInit','fileUploadInit','icheckInit','selectInit')
 
 class TaskTemplate {
 	constructor() {

@@ -29,6 +29,7 @@ import '../depend/adminlte/js/adminlte.js'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'icheck/skins/flat/blue.css'
 import 'bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css'
+import 'select2/dist/css/select2.min.css'
 import 'eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css'
 import '../depend/bower_components/font-awesome/css/font-awesome.min.css'
 import '../depend/bower_components/Ionicons/css/ionicons.min.css'
@@ -37,6 +38,7 @@ import '../depend/adminlte/css/skins/_all-skins.min.css'
 
 
 import '../style/index.less'
+$.fn.modal.Constructor.prototype.enforceFocus = () => {}
 class Public {
 	constructor() {
 
@@ -70,13 +72,12 @@ class Public {
 				$(".isDisabled").bootstrapSwitch()
 			},
 			icheckInit: () => {
-				//Enable iCheck plugin for checkboxes
-				//iCheck for checkbox and radio inputs
+
 				$('.icheck').iCheck({
 					checkboxClass: 'icheckbox_flat-blue',
 					radioClass: 'iradio_flat-blue'
 				})
-				//Enable check and uncheck all functionality
+
 				$(".checkbox-toggle").click(() => {
 					var clicks = $('.checkbox-toggle').data('clicks');
 					if (clicks) {
@@ -104,6 +105,11 @@ class Public {
 					'clearMaskOnLostFocus': true
 				})
 				im.mask($('[data-mask]'))
+
+
+			},
+			selectInit:() => {
+				$('.select2').select2()
 			}
 		}
 		if ([...rest].length) {

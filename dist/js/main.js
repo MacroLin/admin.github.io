@@ -60,7 +60,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "71b86e995403d16d0fa0"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "6545865c3303d7c0d72a"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -720,7 +720,7 @@
 /******/ 	__webpack_require__.h = function() { return hotCurrentHash; };
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return hotCreateRequire(177)(__webpack_require__.s = 177);
+/******/ 	return hotCreateRequire(178)(__webpack_require__.s = 178);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -28456,9 +28456,13 @@ __webpack_require__(171);
 
 __webpack_require__(172);
 
+__webpack_require__(173);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+$.fn.modal.Constructor.prototype.enforceFocus = function () {};
 
 var Public = function () {
 	function Public() {
@@ -28495,13 +28499,12 @@ var Public = function () {
 					$(".isDisabled").bootstrapSwitch();
 				},
 				icheckInit: function icheckInit() {
-					//Enable iCheck plugin for checkboxes
-					//iCheck for checkbox and radio inputs
+
 					$('.icheck').iCheck({
 						checkboxClass: 'icheckbox_flat-blue',
 						radioClass: 'iradio_flat-blue'
 					});
-					//Enable check and uncheck all functionality
+
 					$(".checkbox-toggle").click(function () {
 						var clicks = $('.checkbox-toggle').data('clicks');
 						if (clicks) {
@@ -28527,6 +28530,9 @@ var Public = function () {
 						'clearMaskOnLostFocus': true
 					});
 					im.mask($('[data-mask]'));
+				},
+				selectInit: function selectInit() {
+					$('.select2').select2();
 				}
 			};
 
@@ -86171,6 +86177,12 @@ if (typeof jQuery === 'undefined') {
 
 /***/ }),
 /* 173 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -86367,7 +86379,7 @@ if (typeof jQuery === 'undefined') {
 })(window);
 
 /***/ }),
-/* 174 */
+/* 175 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -86411,9 +86423,9 @@ if (typeof jQuery === 'undefined') {
 })();
 
 /***/ }),
-/* 175 */,
 /* 176 */,
-/* 177 */
+/* 177 */,
+/* 178 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -86423,11 +86435,11 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _index = __webpack_require__(122);
 
-__webpack_require__(173);
-
 __webpack_require__(174);
 
-__webpack_require__(178);
+__webpack_require__(175);
+
+__webpack_require__(179);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -86529,11 +86541,16 @@ var Main = function () {
 }();
 
 var main = new Main();
-main.init();
+
+var run = function run() {
+	main.init();
+};
+
+run();
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 178 */
+/* 179 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

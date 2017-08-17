@@ -9,7 +9,7 @@ import '../../depend/bower_components/bideo.js/main.js'
 import '../../style/userAdm.less'
 
 const pub = new Public()
-pub.formInit('inputInit', 'switchInit', 'icheckInit', 'datepickerInit')
+pub.formInit('inputInit', 'switchInit', 'icheckInit', 'datepickerInit','selectInit')
 
 class UserAdm {
 	constructor() {
@@ -18,7 +18,7 @@ class UserAdm {
 	init() {
 		const formInit = () => {
 
-			$('.select2').select2()
+			
 			$('#reservation').daterangepicker()
 			$('#reservationtime').daterangepicker({
 				timePicker: true,
@@ -98,7 +98,6 @@ const userAdm = new UserAdm()
 const run = () => {
 	userAdm.init()
 	userAdm.checkedDelete()
-	userAdm.deleteOne()
 	userAdm.checkState()
 }
 

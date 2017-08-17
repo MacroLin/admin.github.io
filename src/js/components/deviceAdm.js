@@ -6,13 +6,13 @@ import '../../depend/bower_components/bideo.js/main.js'
 import '../../style/deviceAdm.less'
 const pub = new Public()
 
-pub.formInit('inputInit','switchInit','icheckInit')
+pub.formInit('inputInit','switchInit','icheckInit','selectInit')
 class DeviceAdm {
 	constructor() {
 
 	}
 	init() {
-		$(() => {
+		const tableInit = () => {
 			$('#table').DataTable({
 				'paging': true,
 				'lengthChange': false,
@@ -26,7 +26,8 @@ class DeviceAdm {
 					"searchable": false
 				}]
 			})
-		})
+		}
+		$(tableInit)
 	}
 }
 
