@@ -102,4 +102,9 @@ class Main {
 }
 
 const main = new Main()
-main.init()
+
+const run = () => {
+	main.init()
+}
+
+run()

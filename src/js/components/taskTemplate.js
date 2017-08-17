@@ -6,7 +6,7 @@ import '../../style/taskTemplate.less'
 
 const pub = new Public()
 
-pub.formInit()('inputInit','switchInit','datepickerInit','fileUploadInit','icheckInit')
+pub.formInit('inputInit','switchInit','datepickerInit','fileUploadInit','icheckInit')
 
 class TaskTemplate {
 	constructor() {
@@ -32,4 +32,8 @@ class TaskTemplate {
 }
 const taskTemplate = new TaskTemplate()
 
-taskTemplate.init()
+const run = () => {
+	taskTemplate.init()
+}
+
+run()

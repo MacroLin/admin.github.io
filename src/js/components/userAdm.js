@@ -9,7 +9,7 @@ import '../../depend/bower_components/bideo.js/main.js'
 import '../../style/userAdm.less'
 
 const pub = new Public()
-pub.formInit()('inputInit', 'switchInit', 'icheckInit','datepickerInit')
+pub.formInit('inputInit', 'switchInit', 'icheckInit', 'datepickerInit')
 
 class UserAdm {
 	constructor() {
@@ -46,21 +46,29 @@ class UserAdm {
 				}]
 			})
 		}
-		const checkedDelete = () => {
-			const checkboxs = $('table input[type=checkbox]')
-			const deleteBtn = $('.delete-checked')
-			const handleDelete = (ev) => {
-				const checkedArr = []
-				checkboxs.each((i,d)=>{
-					if($(d).prop('checked')){
-						checkedArr.push(i)
-					}
-				})
-				$.ajax({
+
+
+		$(formInit)
+		$(tableInit)
+
+	}
+	checkedDelete() {
+		const checkboxs = $('table input[type=checkbox]')
+		const deleteBtn = $('.delete-checked')
+		const handleDelete = (ev) => {
+			const checkedArr = []
+			checkboxs.each((i, d) => {
+				if ($(d).prop('checked')) {
+					checkedArr.push(i)
+				}
+			})
+			$.ajax({
 					url: '/checkedDelete',
 					type: 'GET',
 					dataType: 'json',
-					data: {"checkedArr":checkedArr},
+					data: {
+						"checkedArr": checkedArr
+					},
 				})
 				.done(function() {
 					console.log("success");
@@ -71,24 +79,28 @@ class UserAdm {
 				.always(function() {
 					console.log("complete");
 				});
-				
-			}
-			deleteBtn.click(handleDelete)
-		}
-		const checkState = () => {
-			const checkBtn = $('.check-btn')
-			const handleCheck = (ev) => {
-				
-			}
-			checkBtn.click(handleCheck)
-		}
-		$(formInit)
-		$(tableInit)
-		$(checkedDelete)
-		$(checkState)
 
+		}
+		deleteBtn.click(handleDelete)
 	}
+	checkState() {
+		const checkBtn = $('.btn-check')
+		const handleCheck = (ev) => {
+
+		}
+		checkBtn.click(handleCheck)
+	}
+
+
 }
 const userAdm = new UserAdm()
 
-userAdm.init()
+const run = () => {
+	userAdm.init()
+	userAdm.checkedDelete()
+	userAdm.deleteOne()
+	userAdm.checkState()
+}
+
+
+run()

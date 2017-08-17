@@ -6,7 +6,7 @@ import '../../depend/bower_components/bideo.js/main.js'
 import '../../style/deviceAdm.less'
 const pub = new Public()
 
-pub.formInit()('inputInit','switchInit','icheckInit')
+pub.formInit('inputInit','switchInit','icheckInit')
 class DeviceAdm {
 	constructor() {
 
@@ -32,4 +32,8 @@ class DeviceAdm {
 
 const deviceAdm = new DeviceAdm()
 
-deviceAdm.init()
+const run = () => {
+	deviceAdm.init()
+}
+
+run()

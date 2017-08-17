@@ -41,77 +41,75 @@ class Public {
 	constructor() {
 
 	}
-	formInit() {
-		return (...rest) => {
-			const actions = {
-				fileUploadInit: () => {
-					const fileUpload = $('.file-upload')
-					const percentInput = $('.percent')
+	formInit(...rest) {
+		const actions = {
+			fileUploadInit: () => {
+				const fileUpload = $('.file-upload')
+				const percentInput = $('.percent')
 
-					const fileHandlChange = (ev) => {
-						const target = $(ev.target)
-						const filename = target.val().replace(/[A-Z](.)\\(fakepath)\\/g, '')
-						const targetPrev = target.prev('span')
-						targetPrev.text(filename)
-					}
-					const percentHandleChange = (ev) => {
-						const target = $(ev.target)
-						const value = target.val()
-						if (/^[0-9]+(.[0-9]{0,10})?$/.test(value)) {
-							target.val(Number(value).toFixed(2) + '%')
-						} else {
-							target.val('0')
-						}
-
-					}
-					percentInput.change(percentHandleChange)
-					fileUpload.change(fileHandlChange)
-				},
-				switchInit: () => {
-					$(".isDisabled").bootstrapSwitch()
-				},
-				icheckInit: () => {
-					//Enable iCheck plugin for checkboxes
-					//iCheck for checkbox and radio inputs
-					$('input[type="checkbox"]').iCheck({
-						checkboxClass: 'icheckbox_flat-blue',
-						radioClass: 'iradio_flat-blue'
-					});
-					//Enable check and uncheck all functionality
-					$(".checkbox-toggle").click(() => {
-						var clicks = $('.checkbox-toggle').data('clicks');
-						if (clicks) {
-							//Uncheck all checkboxes
-							$(".mailbox-messages input[type='checkbox']").iCheck("uncheck");
-							$(".fa", '.checkbox-toggle').removeClass("fa-check-square-o").addClass('fa-square-o');
-						} else {
-							//Check all checkboxes
-							$(".mailbox-messages input[type='checkbox']").iCheck("check");
-							$(".fa", '.checkbox-toggle').removeClass("fa-square-o").addClass('fa-check-square-o');
-						}
-						$('.checkbox-toggle').data("clicks", !clicks);
-					});
-
-				},
-				datepickerInit: () => {
-					$('.datepicker').datetimepicker()
-
-				},
-				inputInit: () => {
-					$("input[type=text]").addClear({
-						symbolClass: "fa fa-times-circle"
-					})
-					const im = new Inputmask({
-						'clearMaskOnLostFocus': true
-					})
-					im.mask($('[data-mask]'))
+				const fileHandlChange = (ev) => {
+					const target = $(ev.target)
+					const filename = target.val().replace(/[A-Z](.)\\(fakepath)\\/g, '')
+					const targetPrev = target.prev('span')
+					targetPrev.text(filename)
 				}
-			}
-			if ([...rest].length) {
-				for (let i = 0; i < [...rest].length; i++) {
-					if ([...rest][i] in actions) {
-						actions[[...rest][i]]()
+				const percentHandleChange = (ev) => {
+					const target = $(ev.target)
+					const value = target.val()
+					if (/^[0-9]+(.[0-9]{0,10})?$/.test(value)) {
+						target.val(Number(value).toFixed(2) + '%')
+					} else {
+						target.val('0')
 					}
+
+				}
+				percentInput.change(percentHandleChange)
+				fileUpload.change(fileHandlChange)
+			},
+			switchInit: () => {
+				$(".isDisabled").bootstrapSwitch()
+			},
+			icheckInit: () => {
+				//Enable iCheck plugin for checkboxes
+				//iCheck for checkbox and radio inputs
+				$('.icheck').iCheck({
+					checkboxClass: 'icheckbox_flat-blue',
+					radioClass: 'iradio_flat-blue'
+				})
+				//Enable check and uncheck all functionality
+				$(".checkbox-toggle").click(() => {
+					var clicks = $('.checkbox-toggle').data('clicks');
+					if (clicks) {
+						//Uncheck all checkboxes
+						$(".mailbox-messages input[type='checkbox']").iCheck("uncheck");
+						$(".fa", '.checkbox-toggle').removeClass("fa-check-square-o").addClass('fa-square-o');
+					} else {
+						//Check all checkboxes
+						$(".mailbox-messages input[type='checkbox']").iCheck("check");
+						$(".fa", '.checkbox-toggle').removeClass("fa-square-o").addClass('fa-check-square-o');
+					}
+					$('.checkbox-toggle').data("clicks", !clicks);
+				})
+
+			},
+			datepickerInit: () => {
+				$('.datepicker').datetimepicker()
+
+			},
+			inputInit: () => {
+				$("input[type=text]").addClear({
+					symbolClass: "fa fa-times-circle"
+				})
+				const im = new Inputmask({
+					'clearMaskOnLostFocus': true
+				})
+				im.mask($('[data-mask]'))
+			}
+		}
+		if ([...rest].length) {
+			for (let i = 0; i < [...rest].length; i++) {
+				if ([...rest][i] in actions) {
+					actions[[...rest][i]]()
 				}
 			}
 		}

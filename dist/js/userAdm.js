@@ -60,7 +60,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "0ac6a6c59eb3180ed65f"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "71b86e995403d16d0fa0"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -28468,80 +28468,79 @@ var Public = function () {
 	_createClass(Public, [{
 		key: 'formInit',
 		value: function formInit() {
-			var _this = this;
+			var actions = {
+				fileUploadInit: function fileUploadInit() {
+					var fileUpload = $('.file-upload');
+					var percentInput = $('.percent');
 
-			return function () {
-				for (var _len = arguments.length, rest = Array(_len), _key = 0; _key < _len; _key++) {
-					rest[_key] = arguments[_key];
-				}
-
-				var actions = {
-					fileUploadInit: function fileUploadInit() {
-						var fileUpload = $('.file-upload');
-						var percentInput = $('.percent');
-
-						var fileHandlChange = function fileHandlChange(ev) {
-							var target = $(ev.target);
-							var filename = target.val().replace(/[A-Z](.)\\(fakepath)\\/g, '');
-							var targetPrev = target.prev('span');
-							targetPrev.text(filename);
-						};
-						var percentHandleChange = function percentHandleChange(ev) {
-							var target = $(ev.target);
-							var value = target.val();
-							if (/^[0-9]+(.[0-9]{0,10})?$/.test(value)) {
-								target.val(Number(value).toFixed(2) + '%');
-							} else {
-								target.val('0');
-							}
-						};
-						percentInput.change(percentHandleChange);
-						fileUpload.change(fileHandlChange);
-					},
-					switchInit: function switchInit() {
-						$(".isDisabled").bootstrapSwitch();
-					},
-					icheckInit: function icheckInit() {
-						//Enable iCheck plugin for checkboxes
-						//iCheck for checkbox and radio inputs
-						$('input[type="checkbox"]').iCheck({
-							checkboxClass: 'icheckbox_flat-blue',
-							radioClass: 'iradio_flat-blue'
-						});
-						//Enable check and uncheck all functionality
-						$(".checkbox-toggle").click(function () {
-							var clicks = $(_this).data('clicks');
-							if (clicks) {
-								//Uncheck all checkboxes
-								$(".mailbox-messages input[type='checkbox']").iCheck("uncheck");
-								$(".fa", '.checkbox-toggle').removeClass("fa-check-square-o").addClass('fa-square-o');
-							} else {
-								//Check all checkboxes
-								$(".mailbox-messages input[type='checkbox']").iCheck("check");
-								$(".fa", '.checkbox-toggle').removeClass("fa-square-o").addClass('fa-check-square-o');
-							}
-							$(_this).data("clicks", !clicks);
-						});
-					},
-					datepickerInit: function datepickerInit() {
-						$('.datepicker').datetimepicker();
-					},
-					inputInit: function inputInit() {
-						$("input[type=text]").addClear({
-							symbolClass: "fa fa-times-circle"
-						});
-						var im = new _inputmask2.default({ 'clearMaskOnLostFocus': true });
-						im.mask($('[data-mask]'));
-					}
-				};
-				if ([].concat(rest).length) {
-					for (var i = 0; i < [].concat(rest).length; i++) {
-						if ([].concat(rest)[i] in actions) {
-							actions[[].concat(rest)[i]]();
+					var fileHandlChange = function fileHandlChange(ev) {
+						var target = $(ev.target);
+						var filename = target.val().replace(/[A-Z](.)\\(fakepath)\\/g, '');
+						var targetPrev = target.prev('span');
+						targetPrev.text(filename);
+					};
+					var percentHandleChange = function percentHandleChange(ev) {
+						var target = $(ev.target);
+						var value = target.val();
+						if (/^[0-9]+(.[0-9]{0,10})?$/.test(value)) {
+							target.val(Number(value).toFixed(2) + '%');
+						} else {
+							target.val('0');
 						}
-					}
+					};
+					percentInput.change(percentHandleChange);
+					fileUpload.change(fileHandlChange);
+				},
+				switchInit: function switchInit() {
+					$(".isDisabled").bootstrapSwitch();
+				},
+				icheckInit: function icheckInit() {
+					//Enable iCheck plugin for checkboxes
+					//iCheck for checkbox and radio inputs
+					$('.icheck').iCheck({
+						checkboxClass: 'icheckbox_flat-blue',
+						radioClass: 'iradio_flat-blue'
+					});
+					//Enable check and uncheck all functionality
+					$(".checkbox-toggle").click(function () {
+						var clicks = $('.checkbox-toggle').data('clicks');
+						if (clicks) {
+							//Uncheck all checkboxes
+							$(".mailbox-messages input[type='checkbox']").iCheck("uncheck");
+							$(".fa", '.checkbox-toggle').removeClass("fa-check-square-o").addClass('fa-square-o');
+						} else {
+							//Check all checkboxes
+							$(".mailbox-messages input[type='checkbox']").iCheck("check");
+							$(".fa", '.checkbox-toggle').removeClass("fa-square-o").addClass('fa-check-square-o');
+						}
+						$('.checkbox-toggle').data("clicks", !clicks);
+					});
+				},
+				datepickerInit: function datepickerInit() {
+					$('.datepicker').datetimepicker();
+				},
+				inputInit: function inputInit() {
+					$("input[type=text]").addClear({
+						symbolClass: "fa fa-times-circle"
+					});
+					var im = new _inputmask2.default({
+						'clearMaskOnLostFocus': true
+					});
+					im.mask($('[data-mask]'));
 				}
 			};
+
+			for (var _len = arguments.length, rest = Array(_len), _key = 0; _key < _len; _key++) {
+				rest[_key] = arguments[_key];
+			}
+
+			if ([].concat(rest).length) {
+				for (var i = 0; i < [].concat(rest).length; i++) {
+					if ([].concat(rest)[i] in actions) {
+						actions[[].concat(rest)[i]]();
+					}
+				}
+			}
 		}
 	}]);
 
@@ -28562,9 +28561,9 @@ var Index = function () {
 	_createClass(Index, [{
 		key: 'init',
 		value: function init() {
-			var _this2 = this;
+			var _this = this;
 
-			$(function () {
+			var iframeInit = function iframeInit() {
 				var iframe = $('.iframe');
 				var header = $('.main-header');
 				var footer = $('.main-footer');
@@ -28586,107 +28585,105 @@ var Index = function () {
 					var windowWidth = window.innerWidth;
 					disHeight = navHeight + headerHeight + footerHeight + 65;
 					iframe.css('height', windowHeight - disHeight);
-					_this2.state.iframeHeight = windowHeight - disHeight;
+					_this.state.iframeHeight = windowHeight - disHeight;
 				}, false);
-				_this2.state.iframeHeight = windowHeight - disHeight;
-			});
-		}
-	}, {
-		key: 'tabFn',
-		value: function tabFn() {
-			var _this3 = this;
-
-			var openBtns = $('.treeview-menu a');
-			var openBtn = $('.permissions a');
-			var navTabsList = $('.nav-tabs .nav-tabs.menu');
-			var navContent = $('.nav-tabs .tab-content');
-
-			var tabInit = function tabInit() {
-				var navTabs = navTabsList.find('li');
-				var navPanes = navContent.find('.tab-pane');
-				navTabs.removeClass('active');
-				navPanes.removeClass('active');
+				_this.state.iframeHeight = windowHeight - disHeight;
 			};
-			var closeTab = function closeTab(ev) {
-				ev.stopPropagation();
-				var activeIndexs = _this3.state.activeIndexs;
+			var tabInir = function tabInir() {
+				var openBtns = $('.treeview-menu a');
+				var openBtn = $('.permissions a');
+				var navTabsList = $('.nav-tabs .nav-tabs.menu');
+				var navContent = $('.nav-tabs .tab-content');
 
-				var target = $(ev.target);
-				var navTabs = navTabsList.find('li');
-				var navPanes = navContent.find('.tab-pane');
-				var index = target.attr('data-index');
-				var parentNode = target.parents('li');
-
-				var newActiveIndexs = activeIndexs.filter(function (d, i) {
-					if (d == index) {
-						$(navTabs[i + 1]).remove();
-						$(navPanes[i + 1]).remove();
-						if (parentNode.hasClass('active')) {
-							$(navTabs[activeIndexs.length - 1]).addClass('active');
-							$(navPanes[activeIndexs.length - 1]).addClass('active');
-						}
-					}
-
-					return d !== index;
-				});
-
-				_this3.state.activeIndexs = newActiveIndexs;
-			};
-			var openTab = function openTab(ev) {
-				ev.stopPropagation();
-				var target = $(ev.target);
-				var index = target.attr('data-index');
-				var url = target.attr('data-url');
-				var value = target.text();
-				if (target.prop('tagName') != 'A') {
-					url = target.parent().attr('data-url');
-					index = target.parent().attr('data-index');
-					target.attr('data-index', index);
-				}
-
-				var hasNotIndex = _this3.state.activeIndexs.filter(function (d) {
-					return d === index;
-				});
-
-				tabInit();
-				if (!hasNotIndex.length) {
-					var navTabTemplate = '<li class="active"><a href="#tab_' + _this3.state.count + '" data-toggle="tab">' + value + '<i data-index="' + index + '" class="fa fa-times"></i></a></li>';
-					var tabContentTemplate = '<div class="tab-pane active" id="tab_' + _this3.state.count + '"><iframe height="' + _this3.state.iframeHeight + '" class="iframe" src="' + url + '" frameborder="0"></iframe></div>';
-
-					navTabsList.append(navTabTemplate);
-					navContent.append(tabContentTemplate);
-					_this3.state.count++;
-					_this3.state.activeIndexs.push(index);
-
+				var tabInit = function tabInit() {
 					var navTabs = navTabsList.find('li');
 					var navPanes = navContent.find('.tab-pane');
-					var activeIndex = void 0;
-					_this3.state.activeIndexs.forEach(function (d, i) {
+					navTabs.removeClass('active');
+					navPanes.removeClass('active');
+				};
+				var closeTab = function closeTab(ev) {
+					ev.stopPropagation();
+					var activeIndexs = _this.state.activeIndexs;
+
+					var target = $(ev.target);
+					var navTabs = navTabsList.find('li');
+					var navPanes = navContent.find('.tab-pane');
+					var index = target.attr('data-index');
+					var parentNode = target.parents('li');
+
+					var newActiveIndexs = activeIndexs.filter(function (d, i) {
 						if (d == index) {
-							activeIndex = i;
+							$(navTabs[i + 1]).remove();
+							$(navPanes[i + 1]).remove();
+							if (parentNode.hasClass('active')) {
+								$(navTabs[activeIndexs.length - 1]).addClass('active');
+								$(navPanes[activeIndexs.length - 1]).addClass('active');
+							}
 						}
+
+						return d !== index;
 					});
 
-					var closeBtns = $(navTabs.find('i')[activeIndex]);
-					closeBtns.click(closeTab);
-				} else {
-					var _navTabs = navTabsList.find('li');
-					var _navPanes = navContent.find('.tab-pane');
+					_this.state.activeIndexs = newActiveIndexs;
+				};
+				var openTab = function openTab(ev) {
+					ev.stopPropagation();
+					var target = $(ev.target);
+					var index = target.attr('data-index');
+					var url = target.attr('data-url');
+					var value = target.text();
+					if (target.prop('tagName') != 'A') {
+						url = target.parent().attr('data-url');
+						index = target.parent().attr('data-index');
+						target.attr('data-index', index);
+					}
 
-					var _activeIndex = void 0;
-					_this3.state.activeIndexs.forEach(function (d, i) {
-						if (d == index) {
-							_activeIndex = i;
-						}
+					var hasNotIndex = _this.state.activeIndexs.filter(function (d) {
+						return d === index;
 					});
 
-					$(_navTabs[_activeIndex + 1]).addClass('active');
-					$(_navPanes[_activeIndex + 1]).addClass('active');
-				}
+					tabInit();
+					if (!hasNotIndex.length) {
+						var navTabTemplate = '<li class="active"><a href="#tab_' + _this.state.count + '" data-toggle="tab">' + value + '<i data-index="' + index + '" class="fa fa-times"></i></a></li>';
+						var tabContentTemplate = '<div class="tab-pane active" id="tab_' + _this.state.count + '"><iframe height="' + _this.state.iframeHeight + '" class="iframe" src="' + url + '" frameborder="0"></iframe></div>';
+
+						navTabsList.append(navTabTemplate);
+						navContent.append(tabContentTemplate);
+						_this.state.count++;
+						_this.state.activeIndexs.push(index);
+
+						var navTabs = navTabsList.find('li');
+						var navPanes = navContent.find('.tab-pane');
+						var activeIndex = void 0;
+						_this.state.activeIndexs.forEach(function (d, i) {
+							if (d == index) {
+								activeIndex = i;
+							}
+						});
+
+						var closeBtns = $(navTabs.find('i')[activeIndex]);
+						closeBtns.click(closeTab);
+					} else {
+						var _navTabs = navTabsList.find('li');
+						var _navPanes = navContent.find('.tab-pane');
+
+						var _activeIndex = void 0;
+						_this.state.activeIndexs.forEach(function (d, i) {
+							if (d == index) {
+								_activeIndex = i;
+							}
+						});
+
+						$(_navTabs[_activeIndex + 1]).addClass('active');
+						$(_navPanes[_activeIndex + 1]).addClass('active');
+					}
+				};
+
+				openBtns.click(openTab);
+				openBtn.click(openTab);
 			};
-
-			openBtns.click(openTab);
-			openBtn.click(openTab);
+			$(iframeInit);
+			$(tabInir);
 		}
 	}]);
 
@@ -28695,7 +28692,6 @@ var Index = function () {
 
 var index = new Index();
 index.init();
-index.tabFn();
 exports.Public = Public;
 exports.moment = _moment2.default;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
@@ -86442,7 +86438,7 @@ __webpack_require__(184);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var pub = new _index.Public();
-pub.formInit()('inputInit', 'switchInit', 'icheckInit', 'datepickerInit');
+pub.formInit('inputInit', 'switchInit', 'icheckInit', 'datepickerInit');
 
 var UserAdm = function () {
 	function UserAdm() {
@@ -86452,8 +86448,7 @@ var UserAdm = function () {
 	_createClass(UserAdm, [{
 		key: 'init',
 		value: function init() {
-
-			$(function () {
+			var formInit = function formInit() {
 
 				$('.select2').select2();
 				$('#reservation').daterangepicker();
@@ -86468,8 +86463,8 @@ var UserAdm = function () {
 				$('.timepicker').timepicker({
 					showInputs: false
 				});
-			});
-			$(function () {
+			};
+			var tableInit = function tableInit() {
 				$('#table.table').DataTable({
 					'paging': true,
 					'lengthChange': false,
@@ -86481,7 +86476,41 @@ var UserAdm = function () {
 						"orderable": false
 					}]
 				});
-			});
+			};
+			var checkedDelete = function checkedDelete() {
+				var checkboxs = $('table input[type=checkbox]');
+				var deleteBtn = $('.delete-checked');
+				var handleDelete = function handleDelete(ev) {
+					var checkedArr = [];
+					checkboxs.each(function (i, d) {
+						if ($(d).prop('checked')) {
+							checkedArr.push(i);
+						}
+					});
+					$.ajax({
+						url: '/checkedDelete',
+						type: 'GET',
+						dataType: 'json',
+						data: { "checkedArr": checkedArr }
+					}).done(function () {
+						console.log("success");
+					}).fail(function () {
+						console.log("error");
+					}).always(function () {
+						console.log("complete");
+					});
+				};
+				deleteBtn.click(handleDelete);
+			};
+			var checkState = function checkState() {
+				var checkBtn = $('.btn-check');
+				var handleCheck = function handleCheck(ev) {};
+				checkBtn.click(handleCheck);
+			};
+			$(formInit);
+			$(tableInit);
+			$(checkedDelete);
+			$(checkState);
 		}
 	}]);
 
