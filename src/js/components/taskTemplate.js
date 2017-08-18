@@ -13,7 +13,7 @@ class TaskTemplate {
 
 	}
 	init() {
-		$(() => {
+		const tableInit = () => {
 			$('#table').DataTable({
 				'paging': true,
 				'lengthChange': false,
@@ -26,7 +26,8 @@ class TaskTemplate {
 					"targets": [0, 7]
 				}]
 			})
-		})
+		}
+		$(tableInit)
 
 	}
 }

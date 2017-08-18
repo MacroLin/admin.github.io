@@ -38,6 +38,10 @@
 							<i class="fa fa-wrench"></i>
 							检查所有
 						</a>
+						<a href="#" class="btn btn-app btn-check">
+							<i class="fa fa-random"></i>
+							分配
+						</a>
 					</div>
 				</div>
 				<!-- /.box-header -->
@@ -59,6 +63,7 @@
 									<th>备注</th>
 									<th>到期时间</th>
 									<th>地区</th>
+									<th>所属机房</th>
 									<th>操作</th>
 								</tr>
 							</thead>
@@ -78,6 +83,7 @@
 										08/17/2017 2:54 PM
 									</td>
 									<td>US</td>
+									<td>123</td>
 									<td>
 										<a href="#" data-toggle="modal" data-target="#editModal" class="btn btn-primary btn-sm">
 											<i class="fa fa-edit"></i>
@@ -87,34 +93,13 @@
 											<i class="fa fa-trash-o"></i>
 											删除
 										</a>
-									</td>
-								</tr>
-								<tr>
-									<td><input class="icheck" type="checkbox"></td>
-									<td>nnb.8866.org</td>
-									<td>uyiab128087</td>
-									<td>baiyu123456</td>
-									<td>
-										<span class="label bg-olive label-sm">正常</span>
-									</td>
-									<td>
-										hello world
-									</td>
-									<td>
-										08/17/2017 2:54 PM
-									</td>
-									<td>US</td>
-									<td>
-										<a href="#" data-toggle="modal" data-target="#editModal" class="btn btn-primary btn-sm">
-											<i class="fa fa-edit"></i>
-											修改
-										</a>
 										<a href="#" data-toggle="modal" class="btn btn-danger btn-sm">
-											<i class="fa fa-trash-o"></i>
-											删除
+											<i class="fa fa-random"></i>
+											分配
 										</a>
 									</td>
 								</tr>
+								
 							</tbody>
 						</table>
 					</div>
@@ -176,13 +161,26 @@
 											<option value="">CN</option>
 										</select>
 									</div>
-									<div class="form-group">
+									<div class="form-group  col-xs-6">
 										<label>到期时间:</label>
-										<div class="input-group datepicker col-xs-8">
+										<div class="input-group datepicker">
 											<input type="text" class="form-control">
 											<div class="input-group-addon">
 												<span class="glyphicon glyphicon-th"></span>
 											</div>
+										</div>
+									</div>
+									<div class="form-group  col-xs-6">
+										<label>所属机房:</label>
+										<div class="input-group">
+											<select style="width:100%" class="select2" name="" id="">
+												<option value="">
+													机房1
+												</option>
+												<option value="">
+													机房2
+												</option>
+											</select>
 										</div>
 									</div>
 									<div class="form-group col-xs-12">
@@ -250,13 +248,26 @@
 											<option value="">CN</option>
 										</select>
 									</div>
-									<div class="form-group">
+									<div class="form-group  col-xs-6">
 										<label>到期时间:</label>
-										<div class="input-group datepicker col-xs-8">
+										<div class="input-group datepicker">
 											<input type="text" class="form-control">
 											<div class="input-group-addon">
 												<span class="glyphicon glyphicon-th"></span>
 											</div>
+										</div>
+									</div>
+									<div class="form-group  col-xs-6">
+										<label>所属机房:</label>
+										<div class="input-group">
+											<select style="width:100%" class="select2" name="" id="">
+												<option value="">
+													机房1
+												</option>
+												<option value="">
+													机房2
+												</option>
+											</select>
 										</div>
 									</div>
 									<div class="form-group col-xs-12">

@@ -60,7 +60,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "6545865c3303d7c0d72a"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "6e48eb618163c87407d9"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -86459,7 +86459,7 @@ var TaskTemplate = function () {
 	_createClass(TaskTemplate, [{
 		key: 'init',
 		value: function init() {
-			$(function () {
+			var tableInit = function tableInit() {
 				$('#table').DataTable({
 					'paging': true,
 					'lengthChange': false,
@@ -86472,7 +86472,8 @@ var TaskTemplate = function () {
 						"targets": [0, 7]
 					}]
 				});
-			});
+			};
+			$(tableInit);
 		}
 	}]);
 

@@ -11706,6 +11706,7 @@ html body .wrapper {
 }
 html body .wrapper .box {
   border-top: 0;
+  background: rgba(255, 255, 255, 0.8);
 }
 html body .wrapper .content-wrapper .nav-tabs li a {
   background: rgba(33, 33, 22, 0.1);
@@ -11740,7 +11741,7 @@ html body .wrapper .modal {
 html body .wrapper .modal .modal-dialog {
   position: relative;
   height: 100%;
-  width: 60%;
+  width: 50%;
   margin: auto;
   overflow: hidden;
   padding-top: 45px;
@@ -11763,7 +11764,10 @@ html body .wrapper .modal .modal-dialog .modal-content .modal-body {
   overflow: auto;
   height: 100%;
 }
-html body .wrapper .form-submit {
+html body .wrapper .form-group .input-group {
+  width: 100%;
+}
+html body .wrapper .form-group .form-submit {
   width: 60%;
   margin: auto;
 }
