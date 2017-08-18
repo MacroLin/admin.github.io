@@ -60,7 +60,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "11ed861e2c8606211d30"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "a4b9c09e3283e6a744a6"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -28384,7 +28384,7 @@ module.exports = __webpack_require__.p + "/assets/videos/4b0a719428a374b476ac8b4
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
-exports.moment = exports.Public = undefined;
+exports.Noty = exports.moment = exports.Public = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -28554,29 +28554,6 @@ var Public = function () {
 				}
 			}
 		}
-	}, {
-		key: 'alert',
-		value: function alert() {
-			var actions = {
-				success: function success() {
-					new _noty2.default({
-						text: 'Notification text'
-					}).show();
-				}
-			};
-
-			for (var _len2 = arguments.length, rest = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-				rest[_key2] = arguments[_key2];
-			}
-
-			if ([].concat(rest).length) {
-				for (var i = 0; i < [].concat(rest).length; i++) {
-					if ([].concat(rest)[i] in actions) {
-						actions[[].concat(rest)[i]]();
-					}
-				}
-			}
-		}
 	}]);
 
 	return Public;
@@ -28584,6 +28561,7 @@ var Public = function () {
 
 exports.Public = Public;
 exports.moment = _moment2.default;
+exports.Noty = _noty2.default;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
@@ -89468,7 +89446,7 @@ var UserAdm = function () {
 			var checkboxs = $('table input[type=checkbox]');
 			var deleteBtn = $('.delete-checked');
 			var handleDelete = function handleDelete(ev) {
-				pub.alert('success');
+
 				var target = $(ev.target);
 				var checkedArr = [];
 				checkboxs.each(function (i, d) {
@@ -89476,21 +89454,33 @@ var UserAdm = function () {
 						checkedArr.push(i);
 					}
 				});
+
 				if (checkedArr.length > 0) {
-					$.ajax({
-						url: '/checkedDelete',
-						type: 'GET',
-						dataType: 'json',
-						data: {
-							"checkedArr": checkedArr
-						}
-					}).done(function () {
-						console.log("success");
-					}).fail(function () {
-						console.log("error");
-					}).always(function () {
-						console.log("complete");
-					});
+					var n = new _public.Noty({
+						text: '<h3>确定要删除吗?</h3>',
+						buttons: [_public.Noty.button('确定', 'btn btn-success', function () {
+							$.ajax({
+								url: '/checkedDelete',
+								type: 'GET',
+								dataType: 'json',
+								data: {
+									"checkedArr": checkedArr
+								}
+							}).done(function () {
+								console.log("success");
+							}).fail(function () {
+								console.log("error");
+							}).always(function () {
+								console.log("complete");
+							});
+						}, {
+							id: 'button1',
+							'data-status': 'ok'
+						}), _public.Noty.button('取消', 'btn btn-error', function () {
+							n.close();
+						})],
+						layout: 'top'
+					}).show();
 				}
 			};
 			deleteBtn.click(handleDelete);

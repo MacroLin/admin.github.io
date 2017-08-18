@@ -73,7 +73,7 @@ class UserAdm {
 						Noty.button('确定', 'btn btn-success', () => {
 							$.ajax({
 									url: '/checkedDelete',
-									type: 'GET',
+									type: 'POST',
 									dataType: 'json',
 									data: {
 										"checkedArr": checkedArr
@@ -110,7 +110,25 @@ class UserAdm {
 		}
 		checkBtn.click(handleCheck)
 	}
+	batchAllot(){
+		const allotBtn = $('.btn-allot')
+		const checkboxs = $('table input[type=checkbox]')
+		const batchAllotModal = $('#batchAllotModal')
+		const allotHandle = () => {
+			const checkedArr = []
+			checkboxs.each((i, d) => {
+				if ($(d).prop('checked')) {
+					checkedArr.push(i)
+				}
+			})
+			console.log(checkedArr)
+			if (checkedArr.length > 0) {
+				batchAllotModal.modal('show')
+			}
 
+		}		
+		allotBtn.click(allotHandle)
+	}
 
 }
 const userAdm = new UserAdm()
@@ -119,6 +137,7 @@ const run = () => {
 	userAdm.init()
 	userAdm.checkedDelete()
 	userAdm.checkState()
+	userAdm.batchAllot()
 }
 
 
