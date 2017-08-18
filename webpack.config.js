@@ -52,6 +52,18 @@ var config = {
 			}),
 			exclude:/node_modules/
 		},{
+			test:/\.scss$/i,
+			use:extractTextPlugin.extract({
+				fallback:'style-loader',
+				use:[
+					'css-loader',{
+						loader:'postcss-loader',
+						options:postcssOpts
+					},'sass-loader'
+				]
+			}),
+			exclude:/node_modules/
+		},{
 			test:/\.css$/i,
 			use:extractTextPlugin.extract({
 				fallback:'style-loader',

@@ -18,7 +18,7 @@ import 'fastclick'
 import 'bootstrap-switch'
 import '../depend/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js'
 import '../depend/plugins/jvectormap/jquery-jvectormap-world-mill-en.js'
-
+import Noty from 'noty'
 import Inputmask from 'inputmask'
 import moment from 'moment'
 
@@ -30,6 +30,7 @@ import 'icheck/skins/flat/blue.css'
 import 'bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css'
 import 'select2/dist/css/select2.min.css'
 import 'eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css'
+import 'noty/lib/noty.css'
 import '../depend/bower_components/font-awesome/css/font-awesome.min.css'
 import '../depend/bower_components/Ionicons/css/ionicons.min.css'
 import '../depend/adminlte/css/AdminLTE.css'
@@ -121,25 +122,12 @@ class Public {
 			}
 		}
 	}
-	alert(...rest){
-		const actions = {
-			success:() => {
-				$('.alert-success').text(123).alert()
-				console.log()
-			}
-		}
-		if ([...rest].length) {
-			for (let i = 0; i < [...rest].length; i++) {
-				if ([...rest][i] in actions) {
-					actions[[...rest][i]]()
-				}
-			}
-		}
-	}
+
 }
 
 
 export {
 	Public,
 	moment,
+	Noty
 }

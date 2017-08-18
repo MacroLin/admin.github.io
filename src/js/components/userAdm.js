@@ -1,6 +1,7 @@
 import {
 	Public,
-	moment
+	moment,
+	Noty
 } from '../public'
 
 import '../../depend/bower_components/bideo.js/bideo.js'
@@ -56,32 +57,48 @@ class UserAdm {
 		const checkboxs = $('table input[type=checkbox]')
 		const deleteBtn = $('.delete-checked')
 		const handleDelete = (ev) => {
-			pub.alert('success')
-			const target =  $(ev.target)
+
+			const target = $(ev.target)
 			const checkedArr = []
 			checkboxs.each((i, d) => {
 				if ($(d).prop('checked')) {
 					checkedArr.push(i)
 				}
 			})
+
 			if (checkedArr.length > 0) {
-				$.ajax({
-						url: '/checkedDelete',
-						type: 'GET',
-						dataType: 'json',
-						data: {
-							"checkedArr": checkedArr
-						},
-					})
-					.done(function() {
-						console.log("success");
-					})
-					.fail(function() {
-						console.log("error");
-					})
-					.always(function() {
-						console.log("complete");
-					})
+				var n = new Noty({
+					text: '<h3>确定要删除吗?</h3>',
+					buttons: [
+						Noty.button('确定', 'btn btn-success', () => {
+							$.ajax({
+									url: '/checkedDelete',
+									type: 'GET',
+									dataType: 'json',
+									data: {
+										"checkedArr": checkedArr
+									},
+								})
+								.done(function() {
+									console.log("success");
+								})
+								.fail(function() {
+									console.log("error");
+								})
+								.always(function() {
+									console.log("complete");
+								})
+						}, {
+							id: 'button1',
+							'data-status': 'ok'
+						}),
+
+						Noty.button('取消', 'btn btn-error', () => {
+							n.close();
+						})
+					],
+					layout: 'top'
+				}).show()
 			}
 		}
 		deleteBtn.click(handleDelete)

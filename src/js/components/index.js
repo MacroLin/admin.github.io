@@ -138,7 +138,6 @@ class Index {
 		$(tabInir)
 
 	}
-
 }
 
 const index = new Index()
