@@ -1,6 +1,6 @@
 import {
 	Public
-} from '../index'
+} from '../public'
 
 import '../../depend/bower_components/bideo.js/bideo.js'
 import '../../depend/bower_components/bideo.js/main.js'

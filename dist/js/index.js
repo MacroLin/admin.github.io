@@ -60,7 +60,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "6e48eb618163c87407d9"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "3c61df2fceb4ec036e8a"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -720,7 +720,7 @@
 /******/ 	__webpack_require__.h = function() { return hotCurrentHash; };
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return hotCreateRequire(122)(__webpack_require__.s = 122);
+/******/ 	return hotCreateRequire(178)(__webpack_require__.s = 178);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -28543,156 +28543,33 @@ var Public = function () {
 				}
 			}
 		}
+	}, {
+		key: 'alert',
+		value: function alert() {
+			var actions = {
+				success: function success() {
+					$('.alert-success').text(123).alert();
+					console.log();
+				}
+			};
+
+			for (var _len2 = arguments.length, rest = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+				rest[_key2] = arguments[_key2];
+			}
+
+			if ([].concat(rest).length) {
+				for (var i = 0; i < [].concat(rest).length; i++) {
+					if ([].concat(rest)[i] in actions) {
+						actions[[].concat(rest)[i]]();
+					}
+				}
+			}
+		}
 	}]);
 
 	return Public;
 }();
 
-var Index = function () {
-	function Index() {
-		_classCallCheck(this, Index);
-
-		this.state = {
-			count: 2,
-			activeIndexs: [],
-			iframeHeight: 0
-		};
-	}
-
-	_createClass(Index, [{
-		key: 'init',
-		value: function init() {
-			var _this = this;
-
-			var iframeInit = function iframeInit() {
-				var iframe = $('.iframe');
-				var header = $('.main-header');
-				var footer = $('.main-footer');
-				var nav = $('.nav.menu');
-
-				var navHeight = nav.height();
-				var headerHeight = header.height();
-				var footerHeight = footer.height() || parseInt(footer.css('padding'));
-				var disHeight = navHeight + headerHeight + footerHeight + 65;
-				var windowHeight = window.innerHeight;
-
-				iframe.css('height', windowHeight - disHeight);
-				window.addEventListener('resize', function () {
-					var iframe = $('.iframe');
-					navHeight = nav.height();
-					headerHeight = header.height();
-					footerHeight = footer.height() || parseInt(footer.css('padding'));
-					windowHeight = window.innerHeight;
-					var windowWidth = window.innerWidth;
-					disHeight = navHeight + headerHeight + footerHeight + 65;
-					iframe.css('height', windowHeight - disHeight);
-					_this.state.iframeHeight = windowHeight - disHeight;
-				}, false);
-				_this.state.iframeHeight = windowHeight - disHeight;
-			};
-			var tabInir = function tabInir() {
-				var openBtns = $('.treeview-menu a');
-				var openBtn = $('.permissions a');
-				var navTabsList = $('.nav-tabs .nav-tabs.menu');
-				var navContent = $('.nav-tabs .tab-content');
-
-				var tabInit = function tabInit() {
-					var navTabs = navTabsList.find('li');
-					var navPanes = navContent.find('.tab-pane');
-					navTabs.removeClass('active');
-					navPanes.removeClass('active');
-				};
-				var closeTab = function closeTab(ev) {
-					ev.stopPropagation();
-					var activeIndexs = _this.state.activeIndexs;
-
-					var target = $(ev.target);
-					var navTabs = navTabsList.find('li');
-					var navPanes = navContent.find('.tab-pane');
-					var index = target.attr('data-index');
-					var parentNode = target.parents('li');
-
-					var newActiveIndexs = activeIndexs.filter(function (d, i) {
-						if (d == index) {
-							$(navTabs[i + 1]).remove();
-							$(navPanes[i + 1]).remove();
-							if (parentNode.hasClass('active')) {
-								$(navTabs[activeIndexs.length - 1]).addClass('active');
-								$(navPanes[activeIndexs.length - 1]).addClass('active');
-							}
-						}
-
-						return d !== index;
-					});
-
-					_this.state.activeIndexs = newActiveIndexs;
-				};
-				var openTab = function openTab(ev) {
-					ev.stopPropagation();
-					var target = $(ev.target);
-					var index = target.attr('data-index');
-					var url = target.attr('data-url');
-					var value = target.text();
-					if (target.prop('tagName') != 'A') {
-						url = target.parent().attr('data-url');
-						index = target.parent().attr('data-index');
-						target.attr('data-index', index);
-					}
-
-					var hasNotIndex = _this.state.activeIndexs.filter(function (d) {
-						return d === index;
-					});
-
-					tabInit();
-					if (!hasNotIndex.length) {
-						var navTabTemplate = '<li class="active"><a href="#tab_' + _this.state.count + '" data-toggle="tab">' + value + '<i data-index="' + index + '" class="fa fa-times"></i></a></li>';
-						var tabContentTemplate = '<div class="tab-pane active" id="tab_' + _this.state.count + '"><iframe height="' + _this.state.iframeHeight + '" class="iframe" src="' + url + '" frameborder="0"></iframe></div>';
-
-						navTabsList.append(navTabTemplate);
-						navContent.append(tabContentTemplate);
-						_this.state.count++;
-						_this.state.activeIndexs.push(index);
-
-						var navTabs = navTabsList.find('li');
-						var navPanes = navContent.find('.tab-pane');
-						var activeIndex = void 0;
-						_this.state.activeIndexs.forEach(function (d, i) {
-							if (d == index) {
-								activeIndex = i;
-							}
-						});
-
-						var closeBtns = $(navTabs.find('i')[activeIndex]);
-						closeBtns.click(closeTab);
-					} else {
-						var _navTabs = navTabsList.find('li');
-						var _navPanes = navContent.find('.tab-pane');
-
-						var _activeIndex = void 0;
-						_this.state.activeIndexs.forEach(function (d, i) {
-							if (d == index) {
-								_activeIndex = i;
-							}
-						});
-
-						$(_navTabs[_activeIndex + 1]).addClass('active');
-						$(_navPanes[_activeIndex + 1]).addClass('active');
-					}
-				};
-
-				openBtns.click(openTab);
-				openBtn.click(openTab);
-			};
-			$(iframeInit);
-			$(tabInir);
-		}
-	}]);
-
-	return Index;
-}();
-
-var index = new Index();
-index.init();
 exports.Public = Public;
 exports.moment = _moment2.default;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
@@ -86175,6 +86052,172 @@ if (typeof jQuery === 'undefined') {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 174 */,
+/* 175 */,
+/* 176 */,
+/* 177 */,
+/* 178 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function($) {
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _public = __webpack_require__(122);
+
+__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../../index.less\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Index = function () {
+	function Index() {
+		_classCallCheck(this, Index);
+
+		this.state = {
+			count: 2,
+			activeIndexs: [],
+			iframeHeight: 0
+		};
+	}
+
+	_createClass(Index, [{
+		key: 'init',
+		value: function init() {
+			var _this = this;
+
+			var iframeInit = function iframeInit() {
+				var iframe = $('.iframe');
+				var header = $('.main-header');
+				var footer = $('.main-footer');
+				var nav = $('.nav.menu');
+
+				var navHeight = nav.height();
+				var headerHeight = header.height();
+				var footerHeight = footer.height() || parseInt(footer.css('padding'));
+				var disHeight = navHeight + headerHeight + footerHeight + 65;
+				var windowHeight = window.innerHeight;
+
+				iframe.css('height', windowHeight - disHeight);
+				window.addEventListener('resize', function () {
+					var iframe = $('.iframe');
+					navHeight = nav.height();
+					headerHeight = header.height();
+					footerHeight = footer.height() || parseInt(footer.css('padding'));
+					windowHeight = window.innerHeight;
+					var windowWidth = window.innerWidth;
+					disHeight = navHeight + headerHeight + footerHeight + 65;
+					iframe.css('height', windowHeight - disHeight);
+					_this.state.iframeHeight = windowHeight - disHeight;
+				}, false);
+				_this.state.iframeHeight = windowHeight - disHeight;
+			};
+			var tabInir = function tabInir() {
+				var openBtns = $('.treeview-menu a');
+				var openBtn = $('.permissions a');
+				var navTabsList = $('.nav-tabs .nav-tabs.menu');
+				var navContent = $('.nav-tabs .tab-content');
+
+				var tabInit = function tabInit() {
+					var navTabs = navTabsList.find('li');
+					var navPanes = navContent.find('.tab-pane');
+					navTabs.removeClass('active');
+					navPanes.removeClass('active');
+				};
+				var closeTab = function closeTab(ev) {
+					ev.stopPropagation();
+					var activeIndexs = _this.state.activeIndexs;
+
+					var target = $(ev.target);
+					var navTabs = navTabsList.find('li');
+					var navPanes = navContent.find('.tab-pane');
+					var index = target.attr('data-index');
+					var parentNode = target.parents('li');
+
+					var newActiveIndexs = activeIndexs.filter(function (d, i) {
+						if (d == index) {
+							$(navTabs[i + 1]).remove();
+							$(navPanes[i + 1]).remove();
+							if (parentNode.hasClass('active')) {
+								$(navTabs[activeIndexs.length - 1]).addClass('active');
+								$(navPanes[activeIndexs.length - 1]).addClass('active');
+							}
+						}
+
+						return d !== index;
+					});
+
+					_this.state.activeIndexs = newActiveIndexs;
+				};
+				var openTab = function openTab(ev) {
+					ev.stopPropagation();
+					var target = $(ev.target);
+					var index = target.attr('data-index');
+					var url = target.attr('data-url');
+					var value = target.text();
+					if (target.prop('tagName') != 'A') {
+						url = target.parent().attr('data-url');
+						index = target.parent().attr('data-index');
+						target.attr('data-index', index);
+					}
+
+					var hasNotIndex = _this.state.activeIndexs.filter(function (d) {
+						return d === index;
+					});
+
+					tabInit();
+					if (!hasNotIndex.length) {
+						var navTabTemplate = '<li class="active"><a href="#tab_' + _this.state.count + '" data-toggle="tab">' + value + '<i data-index="' + index + '" class="fa fa-times"></i></a></li>';
+						var tabContentTemplate = '<div class="tab-pane active" id="tab_' + _this.state.count + '"><iframe height="' + _this.state.iframeHeight + '" class="iframe" src="' + url + '" frameborder="0"></iframe></div>';
+
+						navTabsList.append(navTabTemplate);
+						navContent.append(tabContentTemplate);
+						_this.state.count++;
+						_this.state.activeIndexs.push(index);
+
+						var navTabs = navTabsList.find('li');
+						var navPanes = navContent.find('.tab-pane');
+						var activeIndex = void 0;
+						_this.state.activeIndexs.forEach(function (d, i) {
+							if (d == index) {
+								activeIndex = i;
+							}
+						});
+
+						var closeBtns = $(navTabs.find('i')[activeIndex]);
+						closeBtns.click(closeTab);
+					} else {
+						var _navTabs = navTabsList.find('li');
+						var _navPanes = navContent.find('.tab-pane');
+
+						var _activeIndex = void 0;
+						_this.state.activeIndexs.forEach(function (d, i) {
+							if (d == index) {
+								_activeIndex = i;
+							}
+						});
+
+						$(_navTabs[_activeIndex + 1]).addClass('active');
+						$(_navPanes[_activeIndex + 1]).addClass('active');
+					}
+				};
+
+				openBtns.click(openTab);
+				openBtn.click(openTab);
+			};
+			$(iframeInit);
+			$(tabInir);
+		}
+	}]);
+
+	return Index;
+}();
+
+var index = new Index();
+index.init();
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ })
 /******/ ]);

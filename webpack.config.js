@@ -137,7 +137,7 @@ var newEntries = files.reduce(function(acc,val){
 	return acc
 },{})
 function entry(name){
-	if(name == 'index'){
+	if(name == 'public'){
 		return './src/js/' + name + '.js'
 	}else{
 		return './src/js/components/' + name + '.js'

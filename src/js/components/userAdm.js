@@ -1,7 +1,7 @@
 import {
 	Public,
 	moment
-} from '../index'
+} from '../public'
 
 import '../../depend/bower_components/bideo.js/bideo.js'
 import '../../depend/bower_components/bideo.js/main.js'
@@ -9,7 +9,7 @@ import '../../depend/bower_components/bideo.js/main.js'
 import '../../style/userAdm.less'
 
 const pub = new Public()
-pub.formInit('inputInit', 'switchInit', 'icheckInit', 'datepickerInit','selectInit')
+pub.formInit('inputInit', 'switchInit', 'icheckInit', 'datepickerInit', 'selectInit')
 
 class UserAdm {
 	constructor() {
@@ -18,7 +18,7 @@ class UserAdm {
 	init() {
 		const formInit = () => {
 
-			
+
 			$('#reservation').daterangepicker()
 			$('#reservationtime').daterangepicker({
 				timePicker: true,
@@ -56,30 +56,33 @@ class UserAdm {
 		const checkboxs = $('table input[type=checkbox]')
 		const deleteBtn = $('.delete-checked')
 		const handleDelete = (ev) => {
+			pub.alert('success')
+			const target =  $(ev.target)
 			const checkedArr = []
 			checkboxs.each((i, d) => {
 				if ($(d).prop('checked')) {
 					checkedArr.push(i)
 				}
 			})
-			$.ajax({
-					url: '/checkedDelete',
-					type: 'GET',
-					dataType: 'json',
-					data: {
-						"checkedArr": checkedArr
-					},
-				})
-				.done(function() {
-					console.log("success");
-				})
-				.fail(function() {
-					console.log("error");
-				})
-				.always(function() {
-					console.log("complete");
-				});
-
+			if (checkedArr.length > 0) {
+				$.ajax({
+						url: '/checkedDelete',
+						type: 'GET',
+						dataType: 'json',
+						data: {
+							"checkedArr": checkedArr
+						},
+					})
+					.done(function() {
+						console.log("success");
+					})
+					.fail(function() {
+						console.log("error");
+					})
+					.always(function() {
+						console.log("complete");
+					})
+			}
 		}
 		deleteBtn.click(handleDelete)
 	}

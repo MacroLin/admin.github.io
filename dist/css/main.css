@@ -11739,14 +11739,17 @@ html body .wrapper .modal {
   overflow: hidden;
 }
 html body .wrapper .modal .modal-dialog {
-  position: relative;
-  height: 100%;
+  position: absolute;
+  height: 80%;
   width: 50%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
   margin: auto;
   overflow: hidden;
   padding-top: 45px;
   padding-bottom: 60px;
-  margin-top: 3%;
 }
 html body .wrapper .modal .modal-dialog .modal-header {
   position: fixed;

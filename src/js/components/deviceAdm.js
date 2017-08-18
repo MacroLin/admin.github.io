@@ -1,4 +1,4 @@
-import {Public} from '../index'
+import {Public} from '../public'
 import '../../depend/bower_components/bideo.js/bideo.js'
 import '../../depend/bower_components/bideo.js/main.js'
 
